@@ -1,0 +1,62 @@
+% this file includes the packages that are used
+
+\usepackage[colorinlistoftodos]{todonotes}
+% begin todonotes package configuration
+% documentation of todonotes package http://ctan.127001.ovh/macros/latex/contrib/todonotes/todonotes.pdf
+
+% write todos inline instead of margin
+%\presetkeys{todonotes}{inline}{}
+
+% define todo commands for multiple purposes with different colors
+% \todo = general todo
+\newcommand{\todogen}[1]{\todo[inline]{#1}} %make general todo inline
+\newcommand{\todoref}[1]{\todo[inline, color=yellow]{#1}} % check or add reference
+\newcommand{\todoresearch}[1]{\todo[inline, color=violet]{#1}} % more research necessary
+\newcommand{\tododetail}[1]{\todo[inline, color=cyan]{#1}} % more details please
+\newcommand{\todolayout}[1]{\todo[inline, color=magenta]{#1}} % layout issue to be fixed
+\newcommand{\todocheck}[1]{\todo[inline, color=teal]{#1}} % double check or verifiy
+\newcommand{\todocorrect}[1]{\todo[inline, color=red]{#1}} % wrong statement, please correct
+\newcommand{\todoreview}[1]{\todo[inline, color=blue]{#1}} % this section is ready for review
+
+%end todonotes package configuration
+
+% Only necessary when using official HTWG authorship declaration of authorship as PDF
+%\usepackage{pdfpages}
+
+\usepackage{listings} %to use source code
+%begin listings configuration
+\lstset{language=Python} %Python as default language 
+
+%Think about changing name tag for listings...
+%\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+%\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
+%ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/listings/listings.pdf
+%https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+%https://www.macwrench.de/wiki/Kurztipp_-_Quellcodelistings_in_LaTeX
+%end listings configuration
+
+%acronyms
+\usepackage{acronym}
+
+%add bibliography to toc
+%\usepackage{tocbibind} -> can be defined in documentclass
+%optional: change name Bibliography -> References https://tex.stackexchange.com/questions/12597/renaming-the-bibliography-page-using-bibtex
+\renewcommand{\bibname}{References} 
+
+%graphics
+\usepackage{graphicx}
+
+
+
+%last package is hyperref -> not necessary because bookmark includes hyperref!
+%load hyperref package last to avoid conflicts, because it overrides some commands
+%http://latex.hpfsc.de/content/latex_tipps_und_tricks/links_urls_pdf/
+%\usepackage{hyperref}
+
+%use hyperref instead of bookmark
+%check hyperref package for linking
+%bookmarks in PDF file
+\usepackage[numbered]{bookmark}
+%ftp://ftp.mpi-sb.mpg.de/pub/tex/mirror/ftp.dante.de/pub/tex/macros/latex/contrib/oberdiek/bookmark.pdf
+
+

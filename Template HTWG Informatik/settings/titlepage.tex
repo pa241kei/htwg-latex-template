@@ -1,0 +1,29 @@
+%this file includes the titlepage setup
+%useful links
+%https://de.wikibooks.org/wiki/LaTeX/_Eine_Titelseite_erstellen
+%http://www.golatex.de/wiki/Schmutztitel
+%KOMAScript Documentation chapter 3.7
+%https://komascript.de/~mkohm/scrguide.pdf
+
+%begin title page
+\titlehead{\includegraphics{img/htwgLogo} \hfill \includegraphics{img/htwgDept}}
+\subject{Master Thesis}
+\title{\theTitle}
+\author{\theAuthor\\
+	{\large\matr}\\ 
+	{\large\authorMailTo}
+}
+\date{\submit}	
+\subtitle{A thesis submitted in partial fulfillment of the requirements for the degree of Master of Science (M.Sc.)}
+\publishers
+{\small supervised by \vspace{3pt}\\ 
+	{\large \supVis\thanks{\supVisMailTo}}\vspace{3pt}\\ 
+	{\small and \vspace{3pt}}\\ 
+	{\large \coSup\thanks{\coop, \coSupMailTo}}
+}
+
+%further options
+%\extratitle{SCHMUTZTITEL} -> not necessary
+%\dedication{If you want to change the world, start off by making your bed.}
+
+%end title page

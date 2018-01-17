@@ -1,0 +1,104 @@
+\documentclass{scrreprt} 
+%scrreprt is a KOMAScript class
+%KOMASCript Documentation https://komascript.de/~mkohm/scrguide.pdf
+
+%according to screprt documentation include all options in the following command:
+\KOMAoptions{
+fontsize=11pt, 
+paper=a4, 
+abstract=true, 
+listof=totoc, 
+bibliography=totoc, 
+numbers=noenddot}
+% A4 paper is default in scrreprt class, abstract=true activates abstract section with headline
+% listof = totoc -> makes lists appear in the toc
+% bibliography=totoc -> add bibliography to toc 
+%numbers=noenddot -> usually, when alphanumeric numbering is used, i.e. appendix, numbers end with dot (ISO 2145) -> this is to switch this off.
+%consider KOMA script documentation on scrreprt http://babyname.tips/mirrors/ctan/macros/latex/contrib/koma-script/doc/scrguien.pdf
+
+% please check submission procedure https://www.htwg-konstanz.de/master/informatik/studienorganisation/abschlussarbeit/
+
+% include all files from settings folder
+%load packages
+\include{settings/packages}
+%load customized layout
+\include{settings/layout}
+%load global variables
+\include{settings/stringVariables}
+%load titlepage setup
+\include{settings/titlepage}
+
+
+
+\begin{document}
+%generate titlepage from information in settings/titlepage.tex file
+\maketitle
+
+%comment todos for final version
+\include{settings/todoLegend}
+\listoftodos
+
+%start preface
+\pagenumbering{roman}
+\include{preface/abstract}
+\include{preface/declaration}
+%alternative:\includepdf[pages={1}]{preface/declaration.pdf}
+
+%add pdfbookmark for toc
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\todolayout{Think about Abstract and Author Declaration in TOC}
+
+% lists of objects
+\listoffigures
+\listoftables
+\lstlistoflistings
+\todogen{Think about changing name for listings heading --> List of Listings}
+
+%list of abbreviations
+\include{preface/acronyms}
+
+%end preface
+
+% start content part of thesis
+\pagenumbering{arabic}
+\include{chapters/01introduction}
+\include{chapters/02relatedWork}
+\include{chapters/03dataAnalysis}
+\include{chapters/04implementation}
+\include{chapters/05test}
+\include{chapters/06evaluation}
+\include{chapters/07conclusion}
+
+%end content part of thesis
+
+%start references
+%https://www.sharelatex.com/learn/Bibliography_management_with_bibtex#Bibliography_management_with_Bibtex
+%\addcontentsline{toc}{chapter}{References}
+\bibliography{bib/references}
+\bibliographystyle{ieeetran} %http://www.ctan.org/pkg/ieeetran
+\todolayout{Check citation style with hda}
+%end references
+
+%start appendix
+%if appendix is used, a dot after numbering is done.
+%use appendix only if necessary!
+\appendix
+\include{chapters/appendix}
+%end appendix
+
+\end{document}
+
+%additional information
+%compiling:
+%http://www.bibtex.org/Using/
+
+%order of chapters
+%http://www.hrm.rub.de/studium/leitfaden/
+%http://www.master-bachelor-korrektur.de/struktur.php
+%http://www.holgermatthes.de/diplom-reader/gestaltung/formaler_aufbau.php
+%referring to APA6 style
+%https://tex.stackexchange.com/questions/88366/order-of-references-tables-figures-and-appendices-using-apa6-class
+%http://guides.rasmussen.edu/apa/abstract-appendix
+%http://www.apastyle.org/
+
