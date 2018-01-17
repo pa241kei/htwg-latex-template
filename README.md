@@ -1,2 +1,7 @@
 # htwg-latex-template
-My version of a HTWG Konstanz University of Applied Sciences LaTeX template for the department of computer science
+My version of a LaTeX template for HTWG Konstanz
+
+Hochschule Konstanz Technik, Wirtschaft und Gestaltung
+University of Applied Sciences
+
+Department of Computer Science
